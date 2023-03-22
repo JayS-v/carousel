@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project.css">
+    <title>Carousel</title>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="slider">
+         <input type="radio" class="checkbox-for-img1 default-checkboxes" id="checkbox-img1" value="checkbox-img1" name="slider-images" checked>
+         <input type="radio" class="checkbox-for-img2 default-checkboxes" id="checkbox-img2" value="checkbox-img2" name="slider-images">
+         <input type="radio" class="checkbox-for-img3 default-checkboxes" id="checkbox-img3" value="checkbox-img3" name="slider-images">
+         <div class="slider__slides-container">
+            <figure class="slide1 slider__slides-container-item" >
+               <img class="slider__slides-container-item-image" src="images/background1.jpg" alt="background1" width="100%">
+               <div class="slider__slides-container-item-text text1">
+                  <h2>Material Design</h2>
+                  <p>Designer Matías Duarte explained that, "unlike real paper, our digital material can expand and reform intelligently. Material has physical surfaces and edges. Seams and shadows provide meaning about what you can touch." Google states that their new design language is based on paper and ink.</p>
+               </div>
+            </figure>
+            <figure class="slide2 slider__slides-container-item">
+               <img class="slider__slides-container-item-image" src="images/background2.jpg" alt="background2" width="100%">
+               <div class="slider__slides-container-item-text text2">
+                  <h2>Long and pointless text</h2>
+                  <p>This text is a very boring text and I bet you will not manage to read the whole text since the only period in the text is the one that ends the whole text that is by the way so long and pointless.</p>
+               </div>
+            </figure>
+            <figure class="slide3 slider__slides-container-item">
+               <img class="slider__slides-container-item-image" src="images/background3.jpg" alt="background3" width="100%">
+               <div class="slider__slides-container-item-text text3">
+                  <h2>Long and pointless text 2</h2>
+                  <p>This text is also a very boring text and I bet you will not manage to read the whole text since the only period in the text is the one that ends the whole text that is by the way so long and pointless that writing it is just as fun as the text becomes boring since it is so long and pointless and also quite boring.</p>
+               </div>
+            </figure>
+         </div>
+         <div class="slider__dots"> 
+            <label class="dot clickable-area" for="checkbox-img1"></label> 
+            <label class="dot clickable-area" for="checkbox-img2"></label>
+            <label class="dot clickable-area" for="checkbox-img3"></label>
+         </div>
+         <div class="slider__arrows">
+            <label class="arrow clickable-area" for="checkbox-img1"></label>
+            <label class="arrow clickable-area" for="checkbox-img2"></label>
+            <label class="arrow clickable-area" for="checkbox-img3"></label>
+         </div>
+      </div>
+    </div>
+</body>
+</html>
