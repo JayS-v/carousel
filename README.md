@@ -1,2 +1,1 @@
-# carousel
-Carousel (diaporama) with SASS and Grid
+[Carousel (diaporama)](https://jays-v.github.io/carousel/)  with SASS and Grid
