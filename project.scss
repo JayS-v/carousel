@@ -1,0 +1,113 @@
+body  {margin: 0;}
+
+.slider {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   &__slides-container {
+      display: grid;
+
+      &-item { 
+         margin: 0;
+         grid-column: 1;
+         grid-row: 1;
+         display: flex;
+         width: 100%;
+         opacity: 0;
+         transition: opacity 300ms;
+
+         &-image {
+            object-fit: cover; 
+            height: 100vh;
+            width: 100vw; 
+         }
+         &-text {
+            position: absolute;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 125%;
+            width: 60%;
+            bottom: 15%;
+            text-align: center; 
+            text-shadow: 1px 1px 5px black;   
+            transform: translateX(-100%); //to hide the text ////////////////
+         }
+      }
+   }
+   &__dots {
+      position: absolute;
+      bottom: 7%;  
+   }
+}
+
+.clickable-area:hover { 
+   cursor: pointer;
+   background-color: white; 
+   transition: background 700ms;
+}
+
+.dot {
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   border: 2px solid white;  
+   margin: 2px;
+}
+
+.default-checkboxes {
+   display: none;
+}
+
+
+/*****TO SHOW THE SLIDES + hovered arrows opacity*********/
+.checkbox-for-img1:checked ~ .slider__slides-container .slide1,
+.checkbox-for-img2:checked ~ .slider__slides-container .slide2,
+.checkbox-for-img3:checked ~ .slider__slides-container .slide3,
+.slider__arrows .clickable-area:hover::before,
+.slider__arrows .clickable-area:hover::after { 
+   opacity: 1;
+}
+
+/*****ARROWS CREATING********************/
+.slider__arrows .clickable-area::before, 
+.slider__arrows .clickable-area::after {
+   content: '';
+   height: 50px;
+   width: 50px;
+   position: absolute;
+   top: 40%;
+   background-size: 100% 100%;
+   opacity: 50%;
+   transition: opacity 500ms;
+}
+//left arrow 
+.checkbox-for-img1:checked ~ .slider__arrows [for="checkbox-img3"]::before,
+.checkbox-for-img2:checked ~ .slider__arrows [for="checkbox-img1"]::before,
+.checkbox-for-img3:checked ~ .slider__arrows [for="checkbox-img2"]::before {
+   background-image: url("images/arrow-left.png");
+   left: 2%;
+}
+//right arrow 
+.checkbox-for-img1:checked ~ .slider__arrows [for="checkbox-img2"]::after,
+.checkbox-for-img2:checked ~ .slider__arrows [for="checkbox-img3"]::after,
+.checkbox-for-img3:checked ~ .slider__arrows [for="checkbox-img1"]::after {
+   background-image: url("images/arrow-right.png");
+   right: 2%;
+}
+
+/*****DOTS BACKGROUNG********************/
+.checkbox-for-img1:checked ~ .slider__dots [for="checkbox-img1"],
+.checkbox-for-img2:checked ~ .slider__dots [for="checkbox-img2"],
+.checkbox-for-img3:checked ~ .slider__dots [for="checkbox-img3"] {
+   background-color: white;
+}
+
+/*****TEXT MOVING********************/
+.checkbox-for-img1:checked ~ .slider__slides-container .text1,
+.checkbox-for-img2:checked ~ .slider__slides-container .text2,
+.checkbox-for-img3:checked ~ .slider__slides-container .text3 {
+   transform: translateX(35%);
+   transition: all 1s cubic-bezier(1,1.6,.83,.78);
+}
